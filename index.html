@@ -94,7 +94,7 @@
         <div class="container">
           <ul class="nav justify-content-between align-items-center">
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="/">
                 <img
                   class="nav__logo"
                   src="images/vannguyenlg.png"
@@ -206,67 +206,39 @@
         <div class="container">
           <h1 class="with-underline text-center">Latest posts</h1>
 
-          <!-- Posts list -->
-          <ul id="postsList" class="row posts-list justify-content-center">
-            <li class="col-12 col-md-6 col-lg-4">
-              <div class="post-item mb-4">
-                <div class="card">
-                  <img
-                    src="images/recipe.jpg"
-                    class="card-img-top"
-                    alt="recipe"
-                    onerror="this.onerror=null;this.src='https://picsum.photos/1368/400';"
-                  />
+          <!-- Search box -->
+          <div class="input-group mb-3">
+            <span class="input-group-text" id="search">Search</span>
+            <input
+              id="searchInput"
+              type="text"
+              class="form-control"
+              placeholder="Search title"
+              aria-label="Search"
+              aria-describedby="search"
+            />
+          </div>
 
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-
-                    <p class="card-text">
-                      <small class="text-muted">by</small>
-                      <small class="text-muted font-weight-bold"
-                        >Hau Nguyen</small
-                      >
-                      <small class="text-muted">- 3 mins ago</small>
-                    </p>
-                  </div>
-                </div>
-
-                <div class="post-item-menu">
-                  <div class="menu-item rounded-circle">
-                    <i class="fas fa-pen"></i>
-                  </div>
-                  <div class="menu-item rounded-circle">
-                    <i class="fas fa-trash"></i>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+          <!-- Post list -->
+          <ul
+            id="postList"
+            class="row posts-list justify-content-center ps-0"
+          ></ul>
 
           <!-- Posts pagination -->
           <nav class="posts-nav" aria-label="Posts navigation">
-            <ul
-              hidden
-              id="postsPagination"
-              class="pagination justify-content-center"
-            >
+            <ul id="pagination" class="pagination justify-content-center">
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
+                  <span aria-hidden="true">&laquo; Prev</span>
                 </a>
               </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <!-- <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li> -->
               <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
+                  <span aria-hidden="true">Next &raquo;</span>
                 </a>
               </li>
             </ul>
@@ -287,6 +259,6 @@
     ></script>
 
     <!-- Scripts should be placed here to prevent blocking render UI -->
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/home.js"></script>
   </body>
 </html>
