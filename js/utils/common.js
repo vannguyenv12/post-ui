@@ -25,3 +25,11 @@ export function setBackgroundImage(parentEl, queryEl, imageUrl) {
   const element = parentEl.querySelector(queryEl);
   if (element) element.style.backgroundImage = `url("${imageUrl}")`;
 }
+
+export function randomNumber(n) {
+  if (n <= 0) return;
+
+  const random = Math.random() * n;
+
+  return Math.round(random);
+}

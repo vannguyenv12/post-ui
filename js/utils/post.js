@@ -55,6 +55,19 @@ export function createPostElement(post) {
     });
   }
 
+  // Remove
+  const removeButton = liElement.querySelector('[data-id="remove"]');
+  if (removeButton) {
+    removeButton.addEventListener('click', (e) => {
+      const customEvent = new CustomEvent('post-delete', {
+        bubbles: true,
+        detail: post,
+      });
+
+      removeButton.dispatchEvent(customEvent);
+    });
+  }
+
   return liElement;
 }
 

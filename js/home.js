@@ -7,12 +7,13 @@ import {
   renderPagination,
   initPagination,
   initSearch,
+  toast,
 } from './utils';
 
 async function handleFilterChange(filterName, filterValue) {
   try {
     const url = new URL(window.location);
-    url.searchParams.set(filterName, filterValue);
+    if (filterName) url.searchParams.set(filterName, filterValue);
 
     // reset page when needed
     if (filterName === 'title_like') {
@@ -30,6 +31,25 @@ async function handleFilterChange(filterName, filterValue) {
   } catch (error) {
     console.log('fail to fetch post list', error);
   }
+}
+
+function registerPostDeleteEvent() {
+  document.addEventListener('post-delete', async (e) => {
+    try {
+      const post = e.detail;
+      console.log('post', post);
+      const message = `Are you sure to remove post "${post.title}"?`;
+      if (window.confirm(message)) {
+        await postApi.remove(post.id);
+        await handleFilterChange();
+
+        toast.success('Remove successfully!');
+      }
+    } catch (error) {
+      console.log('fail to delete', error);
+      toast.error(error.message);
+    }
+  });
 }
 
 (async () => {
@@ -57,6 +77,7 @@ async function handleFilterChange(filterName, filterValue) {
         handleFilterChange('title_like', value);
       },
     });
+    registerPostDeleteEvent();
 
     // set default URL
     // const query = new URLSearchParams(window.location.search);
