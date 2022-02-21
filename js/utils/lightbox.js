@@ -41,7 +41,7 @@ export function registerLightBox({
     currentIndex = [...imgList].findIndex((x) => x === target);
     console.log('album', { target, currentIndex, imgList });
 
-    // TODO: show img at index, modal
+    // Show image and modal
     showImageAtIndex(currentIndex);
     showModal(modalElement);
   });

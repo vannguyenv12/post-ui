@@ -37,8 +37,21 @@ export function createPostElement(post) {
   // Post detail
   const divElement = liElement.firstElementChild;
   if (divElement) {
-    divElement.addEventListener('click', () => {
+    divElement.addEventListener('click', (e) => {
+      // find menu -> ignore parent click (ignore bubbling)
+      const menu = liElement.querySelector('[data-id="menu"]');
+      if (menu && menu.contains(e.target)) return;
+
       window.location.assign(`/post-detail.html?id=${post.id}`);
+    });
+  }
+
+  // Add edit post
+  const editButton = liElement.querySelector('[data-id="edit"]');
+  if (editButton) {
+    editButton.addEventListener('click', (e) => {
+      e.stopPropagation();
+      window.location.assign(`/add-edit-post.html?id=${post.id}`);
     });
   }
 

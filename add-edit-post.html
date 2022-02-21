@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Add edit post</title>
+    <title>Add edit post | Van Nguyen</title>
 
     <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
 
@@ -49,7 +49,7 @@
               <a class="nav-link" href=".">
                 <img
                   class="nav__logo"
-                  src="images/logo.svg"
+                  src="images/vannguyenlg.png"
                   alt="Logo Nordic Coder"
                 />
               </a>
@@ -80,7 +80,7 @@
               </p>
             </div>
 
-            <form id="postForm" class="post-form">
+            <form id="postForm" class="post-form" novalidate>
               <div class="form-group">
                 <label for="postTitle">Title</label>
                 <input
@@ -88,6 +88,7 @@
                   class="form-control"
                   name="title"
                   placeholder="Eg: Learning JS is fun"
+                  required
                 />
                 <div class="invalid-feedback">
                   Ooops! Please write a nice title for your post &gt;.&lt;
@@ -100,7 +101,8 @@
                   type="text"
                   class="form-control"
                   name="author"
-                  placeholder="Eg: Paul Nguyen"
+                  placeholder="Eg: Van Nguyen"
+                  required
                 />
                 <div class="invalid-feedback">
                   Please enter author of this post!
@@ -123,9 +125,18 @@
                   <a href="https://picsum.photos">Picsum service</a> to get a
                   random image.
                 </small>
-                <button type="button" id="postChangeImage" class="btn btn-dark">
-                  Change post image
-                </button>
+
+                <input type="hidden" name="imageUrl" />
+
+                <div class="">
+                  <button
+                    type="button"
+                    id="postChangeImage"
+                    class="btn btn-dark"
+                  >
+                    Change post image
+                  </button>
+                </div>
               </div>
 
               <div class="text-center">
@@ -140,9 +151,10 @@
     </main>
 
     <footer class="text-center text-muted py-3">
-      <small>Created by Po with <i class="fas fa-heart"></i></small>
+      <small>Van Nguyen say Hi<i class="fas fa-heart"></i></small>
     </footer>
 
     <!-- Scripts should be placed here to prevent blocking render UI -->
+    <script type="module" src="/js/add-edit-post.js"></script>
   </body>
 </html>
