@@ -45,7 +45,7 @@ function getPostSchema() {
       .test(
         'at-least-two-words',
         'Please enter at least two words',
-        (value) => value.split(' ').filter((x) => x.length >= 3).length >= 2
+        (value) => value.split(' ').filter((x) => x.length >= 2).length >= 2
       ),
     description: yup.string(),
     imageSource: yup
