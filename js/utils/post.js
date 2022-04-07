@@ -72,7 +72,7 @@ export function createPostElement(post) {
 }
 
 export function renderPostList(elementId, postList) {
-  if (!Array.isArray(postList) || postList.length === 0) return;
+  if (!Array.isArray(postList)) return;
 
   const ulElement = document.getElementById(elementId);
   if (!ulElement) return;
