@@ -20,6 +20,8 @@ export function registerLightBox({
   const nextButton = document.querySelector(nextSelector);
   if (!imgElement || !prevButton || !nextButton) return;
 
+  console.log(prevButton, nextButton);
+
   // Variables
   let imgList = [];
   let currentIndex = 0;
@@ -39,7 +41,7 @@ export function registerLightBox({
       `img[data-album=${target.dataset.album}]`
     );
     currentIndex = [...imgList].findIndex((x) => x === target);
-    console.log('album', { target, currentIndex, imgList });
+    // console.log('album', { target, currentIndex, imgList });
 
     // Show image and modal
     showImageAtIndex(currentIndex);
@@ -50,6 +52,7 @@ export function registerLightBox({
     currentIndex = (currentIndex - 1 + imgList.length) % imgList.length;
     showImageAtIndex(currentIndex);
   });
+
   nextButton.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % imgList.length;
     showImageAtIndex(currentIndex);
