@@ -20,7 +20,7 @@ export function registerLightBox({
   const nextButton = document.querySelector(nextSelector);
   if (!imgElement || !prevButton || !nextButton) return;
 
-  console.log(prevButton, nextButton);
+  // console.log(prevButton, nextButton);
 
   // Variables
   let imgList = [];
